@@ -1,14 +1,15 @@
-/* styles.css */
-
+/* General Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
 }
 
+/* Header Styles */
 header {
     background-color: #000;
     color: #fff;
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 nav {
@@ -37,18 +38,36 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover,
+nav ul li a.active {
+    color: #f60; /* Highlight active link */
+}
+
+/* Hero Section */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url('https://freetemplates.pro/demo/axit/images/banner.jpg'); /* Replace with your image URL */
+    background-image: url('https://freetemplates.pro/demo/axit/images/banner.jpg');
     background-size: cover;
     color: #fff;
-    padding: 50px;
+    padding: 80px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
 .hero-text {
     max-width: 500px;
+    z-index: 1;
 }
 
 .hero-text h1 {
@@ -70,8 +89,9 @@ nav ul li a {
 
 .form-container {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    padding: 30px;
     border-radius: 5px;
+    z-index: 1;
 }
 
 .form-container h2 {
@@ -91,7 +111,7 @@ nav ul li a {
 }
 
 .form-container button {
-    background-color: #f39c12;
+    background-color: #f60;
     color: #fff;
     padding: 10px;
     border: none;
@@ -99,9 +119,91 @@ nav ul li a {
     cursor: pointer;
 }
 
-footer {
-    background-color: #f1f1f1;
+/* Social Media Section */
+.social-media-section {
+    text-align: center;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: -20px; /* Overlap with Hero Section */
+}
+
+.social-media-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.social-media-header p {
+    margin: 10px 0;
+    color: #777;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Tabs Section */
+.tabs-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-button {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background-color: #f60;
+}
+
+.tab-content {
+    flex: 3;
+    padding: 20px;
+}
+
+.download-button {
+    background-color: #f60;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #e55b00;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    padding: 20px;
+    color: #fff;
     text-align: center;
 }
 
@@ -116,7 +218,7 @@ footer .icons {
 }
 
 footer .icons a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     font-size: 20px;
 }
