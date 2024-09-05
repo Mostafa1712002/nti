@@ -40,7 +40,8 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #f60; /* Highlight active link */
+    color: #f60;
+    /* Highlight active link */
 }
 
 /* Hero Section */
@@ -62,7 +63,8 @@ nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark overlay */
 }
 
 .hero-text {
@@ -125,7 +127,8 @@ nav ul li a.active {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: -20px; /* Overlap with Hero Section */
+    margin-top: -20px;
+    /* Overlap with Hero Section */
 }
 
 .social-media-header h2 {
@@ -289,10 +292,22 @@ p {
     color: #666;
     line-height: 1.6;
 }
-.line{
+
+.line {
     margin: 10px 27px 22px 8px;
     width: 78px;
     height: 2px;
     background: #ff8b38;
     display: block;
+}
+
+.icon i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ff8b38;
+    color: #ff8b38;
+    text-align: center;
+    font-size: 18px;
 }
