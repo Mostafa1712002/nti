@@ -222,3 +222,70 @@ footer .icons a {
     text-decoration: none;
     font-size: 20px;
 }
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-list-section {
+    display: flex;
+    gap: 30px;
+}
+
+.standard-picture-section {
+    display: flex;
+    gap: 30px;
+    flex-direction: row-reverse;
+}
+
+.image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    max-width: 500px;
+}
+
+.sub-list {
+    margin-top: 20px;
+}
+
+.sub-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.sub-list-item .icon {
+    font-size: 24px;
+    color: #ff6347;
+}
+
+.sub-list-item .text h4 {
+    margin: 0 0 5px;
+}
+
+.sub-list-item .text p {
+    margin: 0;
+    color: #555;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
