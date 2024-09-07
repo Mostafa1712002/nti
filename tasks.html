@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7e8;
+    }
+
+    .hover-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .hidden-text {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: red;
+        color: white;
+        display: block;
+    }
+
+    .hover-button:hover+.hidden-text {
+        display: none;
+    }
+
+    .section {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f7f7e8;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover to Show Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="section">
+
+        <button class="hover-button">hover me</button>
+        <div class="hidden-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, blanditiis.</div>
+    </div>
+
+</body>
+
+</html>
