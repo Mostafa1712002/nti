@@ -5,192 +5,313 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; 
 }
 
-.main-header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px 0;
-}
-
-.container {
+.overlay {
+    background-image: url('../image/bg1.jpg'); 
+    background-size: cover;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    position: relative; 
 }
 
-.logo h1 {
-    font-size: 24px;
-    letter-spacing: 2px;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.main-nav ul li {
-    margin-left: 20px;
-
-}
-
-.main-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.main-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.search input {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-
-
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin: 0 4px 0px 12px;
-
-
-}
-
-/* Dropdown button */
-.dropdown button {
-    background-color: #ccc;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Dropdown button hover effect */
-.dropdown button:hover {
-    background-color: #ccc;
-}
-
-/* Dropdown menu list (hidden by default) */
-.dropdown ul {
-    display: none;
+.overlay::before {
+    content: '';
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 1;
 }
 
-/* List items in the dropdown */
-.dropdown ul li {
-    padding: 12px 16px;
-}
-
-/* List item link styles */
-.dropdown ul li a {
-    color: black;
-    text-decoration: none;
-    display: block;
-}
-
-/* Hover effect on the list items */
-.dropdown ul li:hover {
-    background-color: #f1f1f1;
-}
-
-/* Show the dropdown menu when hovering over the button */
-.dropdown:hover ul {
-    display: block;
-}
-
-/* hr after header */
-hr {
-    margin: 20px 0;
-    border: 1px solid #ccc;
-}
-
-   /* Container for the background image */
-   .container {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    background: url('/path/to/your/image.png') no-repeat center center;
-    background-size: cover;
-}
-
-/* Circular navigation buttons */
-.circle-button {
-    position: absolute;
-    bottom: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.7);
+.header {
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    cursor: pointer;
-    border: 2px solid transparent;
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid white; 
+    padding: 10px 20px; 
+    margin: 0 150px; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 2; 
+    transition: background 0.3s;
 }
 
-/* Hover effect for the circle button */
-.circle-button:hover {
-    border: 2px solid #007bff;
+.header.scrolled {
+    background-color: black; 
 }
 
-/* Active button */
-.circle-button.active {
-    border: 2px solid #007bff;
+.header-left {
+    flex: 1; 
+    font-size: 24px; 
 }
 
-/* Positioning the buttons */
-.circle-button:nth-child(1) {
-    left: 30%;
-}
-.circle-button:nth-child(2) {
-    left: 40%;
-}
-.circle-button:nth-child(3) {
-    left: 50%;
-}
-.circle-button:nth-child(4) {
-    left: 60%;
+.header-right {
+    display: flex; 
+    justify-content: flex-end;
 }
 
-/* Text below each button */
-.button-text {
-    position: absolute;
-    bottom: 0;
+header nav a {
+    text-decoration: none;
     color: white;
-    font-size: 14px;
-    text-align: center;
-    width: 200px;
+    margin: 0 10px; 
+    font-size: 16px; 
+    font-weight: bold;
 }
 
-.button-text:nth-child(5) {
-    left: 27%;
+header nav a:hover {
+    color: lightgray; 
 }
-.button-text:nth-child(6) {
-    left: 37%;
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    padding: 20px 0;
+    width: 100%;
+    z-index: 2; 
+    margin-top: 80px; 
+    height: 100%; 
 }
-.button-text:nth-child(7) {
-    left: 47%;
+
+.child {
+    display: flex;
+    align-items: center; 
+    color: white;
+    margin: 0 10px; 
 }
-.button-text:nth-child(8) {
-    left: 57%;
+
+.child p {
+    font-size: 30px;
+    font-weight: bold;
+    border: 6px solid gray; 
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 10px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.child p.active {
+    color: white; 
+    border: 6px solid blue; 
+    border-left: 6px solid white; 
+}
+
+.child h3 {
+    font-size: 18px;
+    margin: 0; 
+    margin-left: 10px;
+    max-width: 300px; 
+}
+
+
+
+/************/
+/************/
+.about {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #f0f0f0; 
+    padding: 20px;
+    border-radius: 5px;
+    
+}
+
+.about h2 {
+    font-size: 22px;
+    color: #333; 
+    margin-bottom: 15px;
+  
+}
+
+.about p {
+    font-size: 15px;
+    color: #666; 
+    line-height: 1.6; 
+    text-align: justify; 
+}
+
+/************/
+/************/
+.sidebar {
+flex: 2; 
+ margin-left: 70px; 
+}
+
+.sidebar-container {
+    background-color: whitesmoke;
+    border: 2px solid #d0d0d0; 
+    padding: 15px; 
+    margin: 10px; 
+    width: 800px;
+    border-radius: 5px; 
+}
+
+.category-nav {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+.category-nav .title {
+    font-weight: bold; 
+    margin-right: 20px; 
+}
+
+.category-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-right: 15px; 
+}
+
+.category-nav a:hover {
+    color: blue; 
+}
+
+.category-nav a:last-child {
+    margin-right: 0; 
+}
+.content {
+    display: flex;
+    margin: 20px;
+}
+
+
+.articles-container {
+    display: flex;
+    gap: 20px; 
+}
+
+.featured-article {
+    flex: 1; 
+    background-color: #eaeaea; 
+    padding: 15px;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.articles {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.article {
+    display: flex; 
+    background-color: #eaeaea; 
+    padding: 15px;
+    width: 330px; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc; 
+}
+
+.article img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover; 
+    border-radius: 5px; 
+    margin-right: 15px; 
+}
+
+.article-content {
+    flex: 1; 
+}
+
+.article h3 {
+    font-size: 10px; 
+    margin: 0; 
+    line-height: 1.5; 
+}
+
+.article p {
+    font-size: 12px; 
+    color: #777; 
+    margin: 5px 0 0; 
+    line-height: 1.5; 
+}
+
+/************/
+/************/
+
+.trending-section {
+    width: 60%;
+    margin: 0 auto;
+  
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.trending-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.category-nav {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.category-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.category-nav a:hover {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.articles2 {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.article2 {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50%;
+}
+
+.article2 img {
+    width: 100%;
+    
+    height: 300px;;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+.article2 h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.article2 p {
+    font-size: 14px;
+    color: #666;
 }
