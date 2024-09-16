@@ -26,6 +26,64 @@
             background-color: #007bff;
             margin: 0 15px;
         }
+
+        .detail-box {
+            position: absolute;
+            max-width: 340px;
+            padding: 5px 20px;
+            box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.2);
+        }
+        .hover-effect {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+          
+          }
+          
+          .hover-effect .overlay {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            height: 70px;
+            background-color: rgba(0, 123, 255, 0.9);
+            transform: scalex(0);
+            transition: transform 0.3s ease-in-out; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 10px 20px;
+          }
+          
+          .hover-effect:hover .overlay {
+            transform: scalex(1);
+            cursor: pointer;
+          }
+          
+          .hover-effect .text-content {
+            font-size: 14px;
+          }
+          
+          .hover-effect .text-content h5 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          
+          .hover-effect .text-content i {
+            font-size: 18px;
+            margin-left: 10px;
+          }
+          
+          .hover-effect img {
+            transition: transform 0.3s ease-in-out; 
+          }
+          
+          .hover-effect:hover img {
+            transform: scale(1.05);
+            cursor: pointer;
+          }
     </style>
 </head>
 
@@ -121,8 +179,8 @@
         <div class="container">
             <h2 class="about-title text-center mb-5">About Us</h2>
 
-            <div class="row align-items-center">
-                <div class="col-lg-4">
+            <div class="row  p-re row-cols-4 align-content-lg-center">
+                <div class="col-lg-4 detail-box ">
                     <div class="card-info p-4 shadow bg-white rounded">
                         <ul class="list-unstyled">
                             <li class="mb-4">
@@ -148,7 +206,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4" style="margin:0 0 0 262px">
                     <img src="img/abt-3.jpg" class="img-fluid rounded" alt="About Us Image">
                 </div>
                 <div class="col-lg-4">
@@ -180,7 +238,115 @@
             </div>
         </div>
     </section>
-
+    <section>
+        <div class="container photos">
+          <div class="d-flex justify-content-center align-items-center mt-5">
+            <div class="d-flex flex-column justify-content-center mt-5">
+              <div class="bg-primary" style="height: 2px; width: 30px;"></div>
+              <div class="bg-primary mt-1" style="height: 2px; width: 50px;"></div>
+            </div>
+            <h1 class="mx-3 text-dark mt-5">Our Work</h1>
+            <div class="d-flex flex-column justify-content-center mt-5">
+              <div class="bg-primary" style="height: 2px; width: 30px;"></div>
+              <div class="bg-primary mt-1" style="height: 2px; width: 50px;"></div>
+            </div>
+          </div>
+          <p class="d-flex justify-content-center align-items-center text-dark ml-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+          </p>
+      
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">All</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Creative Design</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Development</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Graphic Design</a>
+            </li>
+          </ul>
+      
+          <div class="d-block">
+            <div class="row g-5 mt-3 mx-5">
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 position-relative hover-effect">
+                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
+                  <div class="overlay">
+                    <div class="text-content">
+                      <p>Development, Graphic Design</p>
+                      <h5>Project Title01</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 position-relative hover-effect">
+                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
+                  <div class="overlay">
+                    <div class="text-content">
+                      <p>Development, Networking, Creative Design</p>
+                      <h5>Project Title02</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 position-relative hover-effect">
+                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
+                  <div class="overlay">
+                    <div class="text-content">
+                      <p>Web Development,  Design</p>
+                      <h5>Project Title03</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 position-relative hover-effect">
+                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
+                  <div class="overlay">
+                    <div class="text-content">
+                      <p>Development, Graphic Design</p>
+                      <h5>Project Title04</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 position-relative hover-effect">
+                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
+                  <div class="overlay">
+                    <div class="text-content">
+                      <p>Development, Graphic Design</p>
+                      <h5>Project Title05</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 position-relative hover-effect">
+                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
+                  <div class="overlay">
+                    <div class="text-content">
+                      <p>Development, Graphic Design</p>
+                      <h5>Project Title06</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
 
