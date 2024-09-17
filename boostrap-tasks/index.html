@@ -2,512 +2,716 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <style>
-        .about-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        .about-title::before,
-        .about-title::after {
-            content: "";
-            width: 50px;
-            height: 2px;
-            background-color: #007bff;
-            margin: 0 15px;
-        }
-
-        .detail-box {
-            position: absolute;
-            max-width: 340px;
-            padding: 5px 20px;
-            box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.2);
-        }
-        .hover-effect {
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-          
-          }
-          
-          .hover-effect .overlay {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-            height: 70px;
-            background-color: rgba(0, 123, 255, 0.9);
-            transform: scalex(0);
-            transition: transform 0.3s ease-in-out; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            padding: 10px 20px;
-          }
-          
-          .hover-effect:hover .overlay {
-            transform: scalex(1);
-            cursor: pointer;
-          }
-          
-          .hover-effect .text-content {
-            font-size: 14px;
-          }
-          
-          .hover-effect .text-content h5 {
-            margin: 0;
-            font-size: 16px;
-            font-weight: 600;
-          }
-          
-          .hover-effect .text-content i {
-            font-size: 18px;
-            margin-left: 10px;
-          }
-          
-          .hover-effect img {
-            transition: transform 0.3s ease-in-out; 
-          }
-          
-          .hover-effect:hover img {
-            transform: scale(1.05);
-            cursor: pointer;
-          }
-          .services-section {
-            background-image: url(img/eb5b60a9-45f6-4ed3-92a3-75547813d1f3.jpg);
-            background-size: cover;
-            position: relative;
-            padding: 50px 20px;
-        }
-    
-        .overlay {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); 
-            z-index: 1;
-        }
-    
-        .services-title {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2; 
-            color: white;
-        }
-    
-        .services-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-            z-index: 2; 
-            position: relative;
-        }
-    
-        .service-card {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0); 
-    border: 1px solid rgba(255, 255, 255, 0.2); 
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-    width: 300px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
-    text-align: center;
-    transition: transform 0.3s;
-    z-index: 2; 
+  <style>
+    .about-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
-    
+
+    .about-title::before,
+    .about-title::after {
+      content: "";
+      width: 50px;
+      height: 2px;
+      background-color: #007bff;
+      margin: 0 15px;
+    }
+
+
+    .icon-text {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .icon-text::before {
+      content: '|';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #000;
+      font-size: 1.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .card-info ul li {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .card-info ul li i {
+      margin-right: 10px;
+    }
+
+    .card-info ul li div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-info ul li p {
+      margin-top: 5px;
+    }
+
+
+    .services-section {
+      background-image: url(img/eb5b60a9-45f6-4ed3-92a3-75547813d1f3.jpg);
+      background-size: cover;
+      position: relative;
+      padding: 50px 20px;
+    }
+
+    .overlay {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .services-title {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .services-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .service-card {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s;
+      z-index: 2;
+    }
+
     .overlay-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    padding: 20px;
-        
-    border-radius: 8px;
-    z-index: 10;
-    text-align: center;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: black;
+      padding: 20px;
+
+      border-radius: 8px;
+      z-index: 10;
+      text-align: center;
     }
-    
+
     .service-card:hover .overlay-content {
-    display: block;
+      display: block;
     }
+
     .service-card:hover {
-    transform: scale(1.05);
+      transform: scale(1.05);
     }
-    
-        .service-card i {
-            font-size: 40px;
-            color: white;
-            margin-bottom: 15px;
-        }
-    
-        .service-card h3 {
-            margin: 10px 0;
-            color: white;
-        }
-    
-        .service-card p {
-            color: white;
-        }
-    </style>
+
+    .service-card i {
+      font-size: 40px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin: 10px 0;
+      color: white;
+    }
+
+    .service-card p {
+      color: white;
+    }
+
+    .hover-effect {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+
+    }
+
+    .hover-effect .overlay {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      height: 70px;
+      background-color: rgba(0, 123, 255, 0.9);
+      transform: scalex(0);
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      margin-top: 210px;
+      padding: 10px 20px;
+    }
+
+    .hover-effect:hover .overlay {
+      transform: scalex(1);
+      cursor: pointer;
+    }
+
+    .hover-effect .text-content {
+      font-size: 14px;
+    }
+
+    .hover-effect .text-content h5 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .hover-effect .text-content i {
+      font-size: 18px;
+      margin-left: 10px;
+    }
+
+    .hover-effect img {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-effect:hover img {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+
+
+    .image-section {
+      width: 100%;
+      height: 100vh;
+      background-image: url('https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2019/03/ecommerce-cover-2.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-top: 50px;
+      background-repeat: no-repeat;
+    }
+
+    .team-section {
+      text-align: center;
+      padding: 50px;
+      background-color: #fff;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .team-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    .team-member {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 200px;
+      border-bottom: 2px solid black;
+      flex: 1 1 250px;
+    }
+
+    .team-member img {
+      width: 100%;
+      height: 320px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .team-member h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      color: #007bff;
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+
+    @media (max-width: 768px) {
+      .team-member {
+        max-width: 100%;
+      }
+
+      .team-container {
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Topbar -->
-    <div class="bg-primary text-white py-2">
-        <div class="container d-flex justify-content-between">
-            <div>
-                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-google-plus-g"></i></a>
-                <span>| 267 Park Avenue New York, NY 90210</span>
-            </div>
-            <div>
-                <a href="#" class="text-white">Quick Email</a>
-                <span class="mx-2 text-white">|</span>
-                <a href="tel:+14099875874" class="text-white">+1 (409) 987-5874</a>
-            </div>
-        </div>
+  <!-- Topbar -->
+  <div class="bg-primary text-white py-2">
+    <div class="container d-flex justify-content-between">
+      <div>
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-google-plus-g"></i></a>
+        <span>| 267 Park Avenue New York, NY 90210</span>
+      </div>
+      <div>
+        <a href="#" class="text-white">Quick Email</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="tel:+14099875874" class="text-white">+1 (409) 987-5874</a>
+      </div>
     </div>
+  </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="http://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2019/05/Trade-X-Logo.png"
-                    alt="Tradex Logo" style="width: 100px;">
-                TRADEX
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img
+          src="http://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2019/05/Trade-X-Logo.png"
+          alt="Tradex Logo" style="width: 100px;">
+        TRADEX
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Headers
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Headers
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Header 1</a></li>
-                            <li><a class="dropdown-item" href="#">Header 2</a></li>
-                        </ul>
-                    </li>
-                    <!-- Additional dropdowns can be added similarly -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Header 1</a></li>
+              <li><a class="dropdown-item" href="#">Header 2</a></li>
+            </ul>
+          </li>
+          <!-- Additional dropdowns can be added similarly -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Carousel -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/slider1.jpg" class="d-block w-100" alt="Slide 1">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center"
-                    style="height: 100%;">
-                    <h1 class="display-4">What You Do Today For Peoples</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula eget dolorenean massa cum.
-                    </p>
-                    <div>
-                        <button type="button" class="btn btn-primary me-2">Get Start Now</button>
-                        <button type="button" class="btn btn-outline-secondary">Contact Us</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Additional carousel items can be added similarly -->
+  <!-- Carousel -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/slider1.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center"
+          style="height: 100%;">
+          <h1 class="display-4">What You Do Today For Peoples</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula eget dolorenean massa cum.
+          </p>
+          <div>
+            <button type="button" class="btn btn-primary me-2">Get Start Now</button>
+            <button type="button" class="btn btn-outline-secondary">Contact Us</button>
+          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+      </div>
+      <!-- Additional carousel items can be added similarly -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- About Us Section -->
+  <section class="about-us-section py-5 bg-light">
+    <div class="container">
+      <h2 class="about-title text-center mb-5">About Us</h2>
+
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <div class="card-info p-4 shadow bg-white rounded">
+            <ul class="list-unstyled">
+              <li class="mb-4 d-flex align-items-center">
+                <i class="fas fa-bullhorn me-2"></i>
+                <div class="icon-text">
+                  <strong>Marketing</strong>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </li>
+              <li class="mb-4 d-flex align-items-center">
+                <i class="fas fa-thumbs-up me-2"></i>
+                <div class="icon-text">
+                  <strong>Great Usability</strong>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </li>
+              <li class="mb-4 d-flex align-items-center">
+                <i class="fas fa-paint-brush me-2"></i>
+                <div class="icon-text">
+                  <strong>Unique Design</strong>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </li>
+              <li class="d-flex align-items-center">
+                <i class="fas fa-bolt me-2"></i>
+                <div class="icon-text">
+                  <strong>Quick & Powerful</strong>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img src="img/abt-3.jpg" class="img-fluid rounded" alt="About Us Image">
+        </div>
+        <div class="col-lg-4">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit nisi a dictum tristique.
+            Nullam urna metus, vestibulum ac sodales.</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+            laudantium.</p>
+          <p>Lorem ipsum dolor sit amet, Aenea jkn consectetuer adipiscn elit.</p>
+          <button class="btn btn-primary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="row text-center mt-5">
+        <div class="col-md-3">
+          <i class="fas fa-project-diagram fa-2x text-primary"></i>
+          <h5>8000<br>Total Projects</h5>
+        </div>
+        <div class="col-md-3">
+          <i class="fas fa-award fa-2x text-primary"></i>
+          <h5>810<br>Won Awards</h5>
+        </div>
+        <div class="col-md-3">
+          <i class="fas fa-smile fa-2x text-primary"></i>
+          <h5>2000<br>Happy Clients</h5>
+        </div>
+        <div class="col-md-3">
+          <i class="fas fa-calendar-alt fa-2x text-primary"></i>
+          <h5>20<br>Years Experience</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="services-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h2 class="about-title text-center mb-5">Our Services</h2>
+      <div class="row services-container">
+        <div class="col-md-3 service-card">
+          <i class="fas fa-cogs"></i>
+          <h3>Service 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="overlay-content">
+            <p>Service 1 Details</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore.</p>
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+        </div>
+        <div class="col-md-3 service-card">
+          <i class="fas fa-briefcase"></i>
+          <h3>Service 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="overlay-content">
+            <p>Service 2 Details</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore.</p>
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+        </div>
+        <div class="col-md-3 service-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Service 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="overlay-content">
+            <p>Service 3 Details</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore.</p>
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+        </div>
+        <div class="col-md-3 service-card">
+          <i class="fas fa-headset"></i>
+          <h3>Service 4</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="overlay-content">
+            <p>Service 4 Details</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore.</p>
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+        </div>
+
+        <div class="col-md-3 service-card">
+          <i class="fas fa-headset"></i>
+          <h3>Service 5</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="overlay-content">
+            <p>Service 5 Details</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore.</p>
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+        </div>
+
+        <div class="col-md-3 service-card">
+          <i class="fas fa-headset"></i>
+          <h3>Service 6</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="overlay-content">
+            <p>Service 6 Details</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore.</p>
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+
+        </div>
+
+      </div>
     </div>
 
-    <!-- About Us Section -->
-    <section class="about-us-section py-5 bg-light">
-        <div class="container">
-            <h2 class="about-title text-center mb-5">About Us</h2>
+  </section>
 
-            <div class="row  p-re row-cols-4 align-content-lg-center">
-                <div class="col-lg-4 detail-box ">
-                    <div class="card-info p-4 shadow bg-white rounded">
-                        <ul class="list-unstyled">
-                            <li class="mb-4">
-                                <i class="fas fa-bullhorn me-2"></i>
-                                <strong>Marketing</strong>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </li>
-                            <li class="mb-4">
-                                <i class="fas fa-thumbs-up me-2"></i>
-                                <strong>Great Usability</strong>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </li>
-                            <li class="mb-4">
-                                <i class="fas fa-paint-brush me-2"></i>
-                                <strong>Unique Design</strong>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </li>
-                            <li>
-                                <i class="fas fa-bolt me-2"></i>
-                                <strong>Quick & Powerful</strong>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4" style="margin:0 0 0 262px">
-                    <img src="img/abt-3.jpg" class="img-fluid rounded" alt="About Us Image">
-                </div>
-                <div class="col-lg-4">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit nisi a dictum tristique.
-                        Nullam urna metus, vestibulum ac sodales.</p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium.</p>
-                    <button class="btn btn-primary">Learn More</button>
-                </div>
-            </div>
-
-            <div class="row text-center mt-5">
-                <div class="col-md-3">
-                    <i class="fas fa-project-diagram fa-2x text-primary"></i>
-                    <h5>8000<br>Total Projects</h5>
-                </div>
-                <div class="col-md-3">
-                    <i class="fas fa-award fa-2x text-primary"></i>
-                    <h5>810<br>Won Awards</h5>
-                </div>
-                <div class="col-md-3">
-                    <i class="fas fa-smile fa-2x text-primary"></i>
-                    <h5>2000<br>Happy Clients</h5>
-                </div>
-                <div class="col-md-3">
-                    <i class="fas fa-calendar-alt fa-2x text-primary"></i>
-                    <h5>20<br>Years Experience</h5>
-                </div>
-            </div>
+  <section>
+    <div class="container photos">
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="d-flex flex-column justify-content-center mt-5">
+          <div class="bg-primary" style="height: 2px; width: 30px;"></div>
+          <div class="bg-primary mt-1" style="height: 2px; width: 50px;"></div>
         </div>
-    </section>
-    <section class="services-section">
-        <div class="overlay"></div>
-        <div class="container">
-            <h2 class="about-title text-center mb-5">Our Services</h2>
-            <div class="row services-container">
-                <div class="col-md-3 service-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Service 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="overlay-content">
-                        <p>Service 1 Details</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    <button class="btn btn-primary">Learn More</button>
-                    </div>
-                </div>
-                <div class="col-md-3 service-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Service 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="overlay-content">
-                        <p>Service 2 Details</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    <button class="btn btn-primary">Learn More</button>
-                    </div>
-                </div>
-                <div class="col-md-3 service-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Service 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="overlay-content">
-                        <p>Service 3 Details</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    <button class="btn btn-primary">Learn More</button>
-                    </div>
-                </div>
-                <div class="col-md-3 service-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Service 4</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="overlay-content">
-                        <p>Service 4 Details</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    <button class="btn btn-primary">Learn More</button>
-                    </div>
-                </div>
-
-     <div class="col-md-3 service-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Service 5</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="overlay-content">
-                        <p>Service 5 Details</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    <button class="btn btn-primary">Learn More</button>
-                    </div>
-                </div>
-                
-                 <div class="col-md-3 service-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Service 6</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="overlay-content">
-                     <p>Service 6 Details</p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    <button class="btn btn-primary">Learn More</button>
-                   </div>
-
-                </div>
-                
-            </div>
+        <h1 class="mx-3 text-dark mt-5">Our Work</h1>
+        <div class="d-flex flex-column justify-content-center mt-5">
+          <div class="bg-primary" style="height: 2px; width: 30px;"></div>
+          <div class="bg-primary mt-1" style="height: 2px; width: 50px;"></div>
         </div>
+      </div>
+      <p class="d-flex justify-content-center align-items-center text-dark ml-5">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+      </p>
 
-    </section>
-    <section>
-        <div class="container photos">
-          <div class="d-flex justify-content-center align-items-center mt-5">
-            <div class="d-flex flex-column justify-content-center mt-5">
-              <div class="bg-primary" style="height: 2px; width: 30px;"></div>
-              <div class="bg-primary mt-1" style="height: 2px; width: 50px;"></div>
-            </div>
-            <h1 class="mx-3 text-dark mt-5">Our Work</h1>
-            <div class="d-flex flex-column justify-content-center mt-5">
-              <div class="bg-primary" style="height: 2px; width: 30px;"></div>
-              <div class="bg-primary mt-1" style="height: 2px; width: 50px;"></div>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Creative Design</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Graphic Design</a>
+        </li>
+      </ul>
+
+      <div class="d-block">
+        <div class="row g-5 mt-3 mx-5">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card h-100 position-relative hover-effect">
+              <img
+                src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/port2-360x380.jpg"
+                class="card-img-top" alt="...">
+              <div class="overlay">
+                <div class="text-content">
+                  <p>Development, Graphic Design</p>
+                  <h5>Project Title01</h5>
+                </div>
+              </div>
             </div>
           </div>
-          <p class="d-flex justify-content-center align-items-center text-dark ml-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-          </p>
-      
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">All</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Creative Design</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Development</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Graphic Design</a>
-            </li>
-          </ul>
-      
-          <div class="d-block">
-            <div class="row g-5 mt-3 mx-5">
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card h-100 position-relative hover-effect">
-                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
-                  <div class="overlay">
-                    <div class="text-content">
-                      <p>Development, Graphic Design</p>
-                      <h5>Project Title01</h5>
-                    </div>
-                  </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card h-100 position-relative hover-effect">
+              <img
+                src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/computer-472016_1920-360x380.jpg"
+                class="card-img-top" alt="...">
+              <div class="overlay">
+                <div class="text-content">
+                  <p>Development, Networking, Creative Design</p>
+                  <h5>Project Title02</h5>
                 </div>
               </div>
-      
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card h-100 position-relative hover-effect">
-                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
-                  <div class="overlay">
-                    <div class="text-content">
-                      <p>Development, Networking, Creative Design</p>
-                      <h5>Project Title02</h5>
-                    </div>
-                  </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card h-100 position-relative hover-effect">
+              <img
+                src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/office-1209640_1920-1-360x380.jpg"
+                class="card-img-top" alt="...">
+              <div class="overlay">
+                <div class="text-content">
+                  <p>Web Development, Design</p>
+                  <h5>Project Title03</h5>
                 </div>
               </div>
-      
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card h-100 position-relative hover-effect">
-                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
-                  <div class="overlay">
-                    <div class="text-content">
-                      <p>Web Development,  Design</p>
-                      <h5>Project Title03</h5>
-                    </div>
-                  </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card h-100 position-relative hover-effect">
+              <img
+                src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/port7-360x380.jpg"
+                class="card-img-top" alt="...">
+              <div class="overlay">
+                <div class="text-content">
+                  <p>Development, Graphic Design</p>
+                  <h5>Project Title04</h5>
                 </div>
               </div>
-      
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card h-100 position-relative hover-effect">
-                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
-                  <div class="overlay">
-                    <div class="text-content">
-                      <p>Development, Graphic Design</p>
-                      <h5>Project Title04</h5>
-                    </div>
-                  </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card h-100 position-relative hover-effect">
+              <img
+                src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/suit-869380_1920-360x380.jpg"
+                class="card-img-top" alt="...">
+              <div class="overlay">
+                <div class="text-content">
+                  <p>Development, Graphic Design</p>
+                  <h5>Project Title05</h5>
                 </div>
               </div>
-      
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card h-100 position-relative hover-effect">
-                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
-                  <div class="overlay">
-                    <div class="text-content">
-                      <p>Development, Graphic Design</p>
-                      <h5>Project Title05</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-      
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card h-100 position-relative hover-effect">
-                  <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728549_1280.jpg" class="card-img-top" alt="...">
-                  <div class="overlay">
-                    <div class="text-content">
-                      <p>Development, Graphic Design</p>
-                      <h5>Project Title06</h5>
-                    </div>
-                  </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card h-100 position-relative hover-effect">
+              <img
+                src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/port2-5-360x380.jpg"
+                class="card-img-top" alt="...">
+              <div class="overlay">
+                <div class="text-content">
+                  <p>Development, Graphic Design</p>
+                  <h5>Project Title06</h5>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+      </div>
+    </div>
+  </section>
 
+  <section class="image-section">
+  </section>
+
+
+  <section class="team-section">
+    <div class="section-title">
+      <h2 class="about-title text-center mb-5">Our Creative Team</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+      </p>
+    </div>
+    <div class="team-container">
+      <div class="team-member">
+        <img src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/team2.png"
+          alt="Jen Whyan">
+        <h3>Jen Whyan</h3>
+        <p>Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/team2.png"
+          alt="Mical Peterson">
+        <h3>Mical Peterson</h3>
+        <p>Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/team2.png"
+          alt="Sara Corner">
+        <h3>Sara Corner</h3>
+        <p>Founder</p>
+      </div>
+
+
+    </div>
+
+
+
+    <div class="team-container" style="margin-top: 30px;">
+      <div class="team-member">
+        <img src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/team2.png"
+          alt="Jen Whyan">
+        <h3>Jen Whyan</h3>
+        <p>Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/team2.png"
+          alt="Mical Peterson">
+        <h3>Mical Peterson</h3>
+        <p>Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="https://digitaltemplatemarket.com/wp/tradex-premium/wp-content/uploads/sites/6/2018/11/team2.png"
+          alt="Sara Corner">
+        <h3>Sara Corner</h3>
+        <p>Founder</p>
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
