@@ -165,4 +165,63 @@ if (holidays === 0) {
 } else {
     money = 0;
     console.log(`My Money is ${money}`);
-}   
+}
+
+// session 3
+var friends = ['Ahmed', 'Sayed', 'Eman', 'Mahmoud', 'Ameer', 'Osama', 'Sameh'];
+let letter = 'a';
+for (i = 0; i < friends.length; i++) {
+    if (friends[i][0] === letter.toUpperCase()) { continue; }
+    console.log(i + "=>" + friends[i]);
+
+}
+
+
+let products = ["Product A", "Product B", "Product C", "Product D"];
+let colors = ['red', 'green', 'blue'];
+let models = ['2020', '2022'];
+
+let productsSection = document.getElementById('products-section');
+
+
+for (let i = 0; i < products.length; i++) {
+    productsSection.innerHTML += `
+      <div class="col-12">
+        <div class="product-card">
+          <h5>Type : ${products[i]} _</h5>
+          <div class="separator"></div>
+          <p class="colors">-Colors-</p>
+          <p>${colors.join(' ')}</p>
+          <p class="model">---model---</p>
+          <p>${models.join('')}</p>
+        </div>
+      </div>
+    `;
+}
+
+
+
+
+function generateYearOptions(startYear, lastYear) {
+    const selectElement = document.createElement('select');
+
+    for (let year = startYear; year <= lastYear; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        selectElement.appendChild(option);
+    }
+
+    return selectElement;
+}
+document.body.appendChild(generateYearOptions(2003, 2024));
+
+
+// task 2 // 
+let myArray = [1, 2, 3, 4, 5];
+
+function printArrayData(array) {
+    console.log('Data in array:', array);
+}
+
+printArrayData(myArray);
